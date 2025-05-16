@@ -27,16 +27,17 @@ function Myapp() {
     if (search == "") {
       setError("Please Enter Name")
     }
-    else if(jsonData.cod == '404'){
-        setError("Please Enter Valid Name")
+    else if (jsonData.cod == '404') {
+      setError("Please Enter Valid Name")
     }
-    else{
-        setError("")
+    else {
+      setError("")
     }
     setSearch("");
   };
   return (
     <>
+    
       <div className="container">
         <div className="inputs">
           <input
@@ -44,14 +45,14 @@ function Myapp() {
             value={search}
             onChange={handleInput}
           />
-           <button onClick={myFun}>search</button>
+          <button onClick={myFun}>search</button>
         </div>
         <div>
-            {error ? 
+          {error ?
             <div className="errorPage">
-<p>{error}</p>
-<img src={err}/>
-            </div> : "" }
+              <p>{error}</p>
+              <img src={err} alt="error" />
+            </div> : ""}
           {data && data.weather ? (
             <div className="weathers">
               <h2 className="cityName">{data.name}</h2>
